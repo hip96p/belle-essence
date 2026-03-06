@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belle Premium — Luxury scents, personally delivered</title>
-  <meta name="description" content="Discover luxury-inspired fragrances at accessible prices, personally delivered across France by Adesuwa. 150+ fragrances available.">
+  <title>Belle Premium — Luxury scents, personally curated</title>
+  <meta name="description" content="Discover long-lasting, luxury fragrances at accessible prices. Personally selected and delivered with care, across France and beyond. 150+ fragrances available.">
   <meta name="theme-color" content="#FFF8F0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23C9A96E'/%3E%3Cstop offset='100%25' stop-color='%23722F37'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='%23722F37'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23C9A96E' stroke-width='1.2'/%3E%3Ctext x='32' y='28' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='22' fill='%23C9A96E'%3EBP%3C/text%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='400' font-size='7' fill='%23C9A96E' letter-spacing='3'%3EPREMIUM%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -150,12 +151,37 @@
       padding-inline: var(--space-4);
     }
     .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .header-brand .brand-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+    .header-brand .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .header-brand .brand-name {
       font-family: var(--font-display);
-      font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+      font-size: clamp(1rem, 0.85rem + 0.8vw, 1.35rem);
       font-weight: 700;
       color: var(--color-burgundy);
-      letter-spacing: 0.01em;
-      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+    .header-brand .brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      font-weight: 500;
+      color: var(--color-gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-top: 1px;
     }
     .header-nav {
       display: flex;
@@ -271,7 +297,17 @@
       color: var(--color-burgundy);
       line-height: 1.0;
       letter-spacing: -0.01em;
-      margin-bottom: var(--space-4);
+      margin-bottom: var(--space-2);
+    }
+    .hero-title .title-accent {
+      display: block;
+      font-family: var(--font-body);
+      font-size: clamp(0.65rem, 0.4rem + 0.8vw, 0.9rem);
+      font-weight: 500;
+      color: var(--color-gold);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-top: var(--space-2);
     }
     .hero-tagline {
       font-family: var(--font-display);
@@ -797,6 +833,15 @@
       font-size: var(--text-xl);
       font-weight: 700;
       color: var(--color-text-inverse);
+      margin-bottom: var(--space-1);
+    }
+    .footer-brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--color-gold);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       margin-bottom: var(--space-2);
     }
     .footer-tagline {
@@ -868,7 +913,18 @@
   <!-- ===== STICKY HEADER ===== -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="#" class="header-brand" aria-label="Belle Premium — Home">Belle Premium</a>
+      <a href="#" class="header-brand" aria-label="Belle Premium — Home">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#722F37"/>
+          <circle cx="32" cy="32" r="27" fill="none" stroke="#C9A96E" stroke-width="1.2"/>
+          <text x="32" y="28" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#C9A96E">BP</text>
+          <text x="32" y="44" text-anchor="middle" font-family="Georgia,serif" font-weight="400" font-size="7" fill="#C9A96E" letter-spacing="3">PREMIUM</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Belle Premium</span>
+          <span class="brand-sub">Parfums de Luxe</span>
+        </span>
+      </a>
       <nav class="header-nav">
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="lang-btn active" data-lang="en" type="button">EN</button>
@@ -896,10 +952,10 @@
       <div class="hero-eyebrow">
         <span data-i18n="hero_eyebrow">Luxury fragrances</span>
       </div>
-      <h1 class="hero-title">Belle Premium</h1>
-      <p class="hero-tagline">Luxury scents, personally delivered</p>
+      <h1 class="hero-title">Belle Premium<span class="title-accent">Parfums de Luxe</span></h1>
+      <p class="hero-tagline">Luxury scents, personally curated. Delivered with care.</p>
       <p class="hero-desc" data-i18n="hero_desc">
-        Discover luxury-inspired fragrances at accessible prices. Personally selected and delivered with care by Adesuwa, across France.
+        Discover long-lasting, luxury fragrances at accessible prices. Personally selected and delivered with care, across France and beyond.
       </p>
       <div class="hero-actions">
         <a href="#catalogue"
@@ -945,7 +1001,7 @@
           <div class="step-number">3</div>
           <div class="step-icon">✨</div>
           <h3 class="step-title" data-i18n="step3_title">Enjoy</h3>
-          <p class="step-desc" data-i18n="step3_desc">Receive your perfume, personally delivered or shipped anywhere in France.</p>
+          <p class="step-desc" data-i18n="step3_desc">Receive your perfume, personally delivered or shipped anywhere in France and select countries*.</p>
         </div>
       </div>
     </div>
@@ -1008,7 +1064,7 @@
         <p class="about-label" data-i18n="about_label">About</p>
         <h2 class="about-title" data-i18n="about_title">About Adesuwa</h2>
         <p class="about-body" data-i18n="about_body1">
-          I'm Adesuwa, the person behind Belle Premium. Based in France, I personally select and deliver luxury-inspired fragrances from renowned Italian artisans. Every bottle I recommend, I've tested myself — 30% concentration perfume extracts, designed to rival the originals.
+          I'm Adesuwa, the face behind Belle Premium. In true Parisian spirit, I personally curate luxury-inspired fragrances from renowned artisans and deliver with care. Every bottle is tested — 30% concentration perfume extracts, amazingly long-lasting, with distinct bio credentials among the originals.
         </p>
         <p class="about-body" style="margin-bottom: var(--space-6);" data-i18n="about_body2">
           Whether you prefer to order online or let me guide you to your ideal fragrance, I'm here to help.
@@ -1019,7 +1075,7 @@
           </div>
           <div class="about-delivery-text">
             <strong data-i18n="delivery_title">Delivery across France</strong>
-            <span data-i18n="delivery_desc">Free personal delivery in Île-de-France. Shipping available throughout France.</span>
+            <span data-i18n="delivery_desc">Free delivery in the Paris region. Shipping available throughout France and Nigeria.</span>
           </div>
         </div>
       </div>
@@ -1071,7 +1127,8 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">Belle Premium</div>
-      <div class="footer-tagline">Luxury scents, personally delivered</div>
+      <div class="footer-brand-sub">Parfums de Luxe</div>
+      <div class="footer-tagline">Luxury scents, personally curated. Delivered with care.</div>
       <a id="footerWaLink"
          href="https://wa.me/33695002959?text=Hi%20Adesuwa%2C%20I%27d%20like%20to%20order%20a%20Belle%20Essence%20perfume!"
          class="footer-wa-link"
@@ -1086,7 +1143,7 @@
       <div class="footer-divider"></div>
       <div class="footer-bottom">
         <span class="footer-copy" data-i18n="footer_copy">© 2026 Belle Premium. All rights reserved.</span>
-        <span class="footer-craft">Powered by premium Italian craftsmanship</span>
+        <span class="footer-craft">Powered by premium Italian craftsmanship and French character</span>
       </div>
     </div>
   </footer>
@@ -1120,7 +1177,7 @@
         step2_title: "Order",
         step2_desc: "Place your order directly on WhatsApp or online, in just a few clicks.",
         step3_title: "Enjoy",
-        step3_desc: "Receive your perfume, personally delivered or shipped anywhere in France.",
+        step3_desc: "Receive your perfume, personally delivered or shipped anywhere in France and select countries*.",
         catalog_label: "150+ references available",
         catalog_title: "Our Collection",
         search_placeholder: "Search by name, brand or number...",
@@ -1134,10 +1191,10 @@
         empty_desc: "Try a different search term or reset filters.",
         about_label: "About",
         about_title: "About Adesuwa",
-        about_body1: "I'm Adesuwa, the person behind Belle Premium. Based in France, I personally select and deliver luxury-inspired fragrances from renowned Italian artisans. Every bottle I recommend, I've tested myself \u2014 30% concentration perfume extracts, designed to rival the originals.",
+        about_body1: "I'm Adesuwa, the face behind Belle Premium. In true Parisian spirit, I personally curate luxury-inspired fragrances from renowned artisans and deliver with care. Every bottle is tested \u2014 30% concentration perfume extracts, amazingly long-lasting, with distinct bio credentials among the originals.",
         about_body2: "Whether you prefer to order online or let me guide you to your ideal fragrance, I'm here to help.",
         delivery_title: "Delivery across France",
-        delivery_desc: "Free personal delivery in \u00CEle-de-France. Shipping available throughout France.",
+        delivery_desc: "Free delivery in the Paris region. Shipping available throughout France and Nigeria.",
         quality_title: "Why Belle Premium?",
         quality1: "30% concentration perfume extracts \u2014 long-lasting guaranteed",
         quality2: "Crafted by Italian artisans specialized in prestige fragrances",
@@ -1156,7 +1213,7 @@
       },
       fr: {
         hero_eyebrow: "Parfums de luxe",
-        hero_desc: "D\u00E9couvrez des fragrances inspir\u00E9es des grandes maisons \u00E0 des prix accessibles. S\u00E9lectionn\u00E9es et livr\u00E9es avec soin par Adesuwa, partout en France.",
+        hero_desc: "D\u00E9couvrez des fragrances de luxe longue tenue \u00E0 des prix accessibles. S\u00E9lectionn\u00E9es avec soin et livr\u00E9es en France et au-del\u00E0.",
         hero_browse_btn: "Parcourir le catalogue",
         hero_contact_btn: "Me contacter",
         how_label: "Simple comme bonjour",
@@ -1166,7 +1223,7 @@
         step2_title: "Commandez",
         step2_desc: "Passez votre commande directement sur WhatsApp ou en ligne, en quelques clics.",
         step3_title: "Profitez",
-        step3_desc: "Recevez votre parfum, livr\u00E9 personnellement ou exp\u00E9di\u00E9 partout en France.",
+        step3_desc: "Recevez votre parfum, livr\u00E9 personnellement ou exp\u00E9di\u00E9 partout en France et dans certains pays*.",
         catalog_label: "150+ r\u00E9f\u00E9rences disponibles",
         catalog_title: "Notre Collection",
         search_placeholder: "Rechercher par nom, marque ou num\u00E9ro...",
@@ -1180,10 +1237,10 @@
         empty_desc: "Essayez un autre terme de recherche ou r\u00E9initialisez les filtres.",
         about_label: "\u00C0 propos",
         about_title: "\u00C0 propos d\u2019Adesuwa",
-        about_body1: "Je suis Adesuwa, la personne derri\u00E8re Belle Premium. Bas\u00E9e en France, je s\u00E9lectionne et livre personnellement des fragrances de luxe inspir\u00E9es des plus grandes maisons, fabriqu\u00E9es par des artisans italiens de renom. Chaque flacon que je recommande, je l\u2019ai test\u00E9 moi-m\u00EAme \u2014 des extraits de parfum \u00E0 30% de concentration, con\u00E7us pour rivaliser avec les originaux.",
+        about_body1: "Je suis Adesuwa, le visage derri\u00E8re Belle Premium. Dans un v\u00E9ritable esprit parisien, je s\u00E9lectionne personnellement des fragrances de luxe aupr\u00E8s d\u2019artisans renomm\u00E9s et livre avec soin. Chaque flacon est test\u00E9 \u2014 des extraits de parfum \u00E0 30% de concentration, une tenue exceptionnelle, avec des cr\u00E9dentials bio distinctifs parmi les originaux.",
         about_body2: "Que vous pr\u00E9f\u00E9riez commander en ligne ou me laisser vous guider vers votre fragrance id\u00E9ale, je suis l\u00E0 pour vous aider.",
         delivery_title: "Livraison partout en France",
-        delivery_desc: "Livraison personnelle gratuite en \u00CEle-de-France. Exp\u00E9dition disponible dans toute la France.",
+        delivery_desc: "Livraison gratuite en r\u00E9gion parisienne. Exp\u00E9dition disponible dans toute la France et au Nigeria.",
         quality_title: "Pourquoi Belle Premium ?",
         quality1: "Extraits de parfum \u00E0 30% de concentration \u2014 longue tenue garantie",
         quality2: "Fabriqu\u00E9s par des artisans italiens sp\u00E9cialis\u00E9s dans les fragrances de prestige",
